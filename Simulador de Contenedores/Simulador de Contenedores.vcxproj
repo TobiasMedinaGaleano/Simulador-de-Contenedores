@@ -128,12 +128,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\DequeSim.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\SimuladorManager.cpp" />
     <ClCompile Include="src\Utils.cpp" />
     <ClCompile Include="src\VectorSim.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\DequeSim.h" />
     <ClInclude Include="src\Simulador.h" />
     <ClInclude Include="src\SimuladorManager.h" />
     <ClInclude Include="src\Utils.h" />
