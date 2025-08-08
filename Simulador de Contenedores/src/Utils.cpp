@@ -6,11 +6,22 @@
 
 int ut::entradaDeNumero(const int& minimoValor, const int& maximoValor, const char* salidaDeError) {
 	int num;
+	bool seCompruebaSiEstaFueraDeRango = minimoValor != maximoValor;
+	/////////////////////////
 	bool cinfail;
+	bool losNumerosEstanFueraDeRango;
 	while (true) {
+		
 		std::cin >> num;
+		
 		cinfail = std::cin.fail();
-		if ((minimoValor != maximoValor) ? (cinfail || (num < minimoValor || num > maximoValor)) : cinfail) {
+		losNumerosEstanFueraDeRango = num < minimoValor || num > maximoValor;
+
+		bool entradaIncorrecta = false;
+		if (seCompruebaSiEstaFueraDeRango) entradaIncorrecta = cinfail || losNumerosEstanFueraDeRango;
+		else entradaIncorrecta = cinfail;
+
+		if (entradaIncorrecta) {
 			if (cinfail) std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
